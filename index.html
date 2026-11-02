@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5eddf">
+
+    <title>Novita's Birthday Surprise ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div class="paper-texture"></div>
+
+<audio id="bgMusic" loop>
+    <source src="assets/music/lagu.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">♫</button>
+
+<!-- WELCOME -->
+<section class="screen active" id="welcome">
+    <div class="main-card">
+        <div class="top-decoration">✿ ❀ ✿</div>
+
+        <span class="small-label">A LITTLE SURPRISE FOR SOMEONE SPECIAL</span>
+
+        <h1>Something Special<br><i>is waiting for you.</i></h1>
+
+        <p>
+            Ada sesuatu yang ingin aku tunjukkan kepadamu.
+            Tapi sebelumnya, kenalan dulu yuk!
+        </p>
+
+        <div class="stamp">MADE WITH LOVE ♡</div>
+
+        <button class="primary-btn" onclick="showScreen('nameScreen')">
+            Let's Begin ♡
+        </button>
+
+        <div class="bottom-note">A little website, a lot of love.</div>
+    </div>
+</section>
+
+<!-- INPUT NAMA -->
+<section class="screen" id="nameScreen">
+    <div class="main-card">
+        <div class="top-decoration">✿</div>
+
+        <span class="small-label">FIRST THINGS FIRST</span>
+
+        <h1>Who are <i>you?</i></h1>
+
+        <p>Sebelum lanjut, siapa nama kamu?</p>
+
+        <div class="input-wrapper">
+            <input
+                type="text"
+                id="visitorName"
+                placeholder="Tulis nama kamu di sini..."
+                autocomplete="off"
+            >
+        </div>
+
+        <button class="primary-btn" onclick="checkName()">
+            Continue ♡
+        </button>
+
+        <p class="error-message" id="nameError"></p>
+    </div>
+</section>
+
+<!-- PERTANYAAN PACAR -->
+<section class="screen" id="quizScreen">
+    <div class="main-card">
+        <div class="top-decoration">♡ ❀ ♡</div>
+
+        <span class="small-label">ONE LITTLE QUESTION</span>
+
+        <h1>Who is your <i>boyfriend?</i></h1>
+
+        <p>
+            Sekarang coba jawab pertanyaan ini.
+            Siapa nama pacar kamu?
+        </p>
+
+        <div class="input-wrapper">
+            <input
+                type="text"
+                id="boyfriendName"
+                placeholder="Nama pacar kamu..."
+                autocomplete="off"
+            >
+        </div>
+
+        <button class="primary-btn" onclick="checkBoyfriend()">
+            Submit Answer ♡
+        </button>
+
+        <p class="error-message" id="quizError"></p>
+    </div>
+</section>
+
+<!-- BERHASIL -->
+<section class="screen" id="successScreen">
+    <div class="main-card">
+        <div class="top-decoration">♡ ♡ ♡</div>
+
+        <span class="small-label">IDENTITY VERIFIED</span>
+
+        <h1>Yeay, <i id="displayName">Novita</i>!</h1>
+
+        <p>
+            Ternyata kamu masih ingat siapa pacar kamu.
+            Sekarang ada sesuatu yang spesial menunggumu.
+        </p>
+
+        <div class="heart-decoration">♥</div>
+
+        <button class="primary-btn" onclick="startBirthday()">
+            Open Your Surprise ♡
+        </button>
+    </div>
+</section>
+
+<!-- HAPPY BIRTHDAY -->
+<section class="screen" id="birthdayScreen">
+    <div class="main-card birthday-card">
+
+        <div class="top-decoration">✿ ❀ ✿</div>
+
+        <span class="small-label">TODAY IS YOUR SPECIAL DAY</span>
+
+        <div class="cake">🎂</div>
+
+        <h1>Happy Birthday,<br><i>Novita!</i></h1>
+
+        <p>
+            Hari ini adalah hari spesial seseorang
+            yang begitu berarti dalam hidupku.
+        </p>
+
+        <div class="birthday-date">
+            <span class="date-line"></span>
+            <span class="date-icon">♡</span>
+            <span class="date-text">03 NOVEMBER 2026</span>
+            <span class="date-icon">♡</span>
+            <span class="date-line"></span>
+        </div>
+
+        <div class="divider-flower">❀ ───── ♡ ───── ❀</div>
+
+        <button class="primary-btn" onclick="showScreen('memoriesScreen')">
+            Let's See Our Memories
+        </button>
+    </div>
+</section>
+
+<!-- OUR MEMORIES -->
+<section class="screen" id="memoriesScreen">
+    <div class="content-card">
+
+        <span class="small-label">A COLLECTION OF US</span>
+
+        <h1>Our <i>Memories</i></h1>
+
+        <p class="section-description">
+            Beberapa potongan kecil cerita yang selalu ingin aku ingat.
+        </p>
+
+        <div class="photo-grid">
+
+            <div class="photo-item rotate-left">
+                <img src="assets/img/foto1.jpg" alt="Kenangan pertama">
+                <span>Our little moment ♡</span>
+            </div>
+
+            <div class="photo-item rotate-right">
+                <img src="assets/img/foto2.jpg" alt="Kenangan kedua">
+                <span>My favorite person</span>
+            </div>
+
+            <div class="photo-item rotate-right">
+                <img src="assets/img/foto3.jpg" alt="Kenangan ketiga">
+                <span>Beautiful memories</span>
+            </div>
+
+            <div class="photo-item rotate-left">
+                <img src="assets/img/foto4.jpg" alt="Kenangan keempat">
+                <span>Always with you ♡</span>
+            </div>
+
+        </div>
+
+        <button class="primary-btn" onclick="showScreen('storyScreen')">
+            Next Our Story →
+        </button>
+    </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="screen" id="storyScreen">
+    <div class="content-card">
+
+        <span class="small-label">CHAPTERS OF US</span>
+
+        <h1>Our <i>Story</i></h1>
+
+        <p class="section-description">
+            Setiap hubungan punya cerita, dan aku senang
+            bisa menjadi bagian dari ceritamu.
+        </p>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+
+                <div class="timeline-content">
+                    <span>THE BEGINNING</span>
+                    <h3>When We First Met</h3>
+
+                    <p>
+                        Semua cerita pasti punya awal, begitu juga dengan cerita kita. Aku mungkin tidak pernah menyangka bahwa pertemuan sederhana bisa menjadi awal dari sesuatu yang begitu berarti. Dari yang awalnya hanya saling mengenal, perlahan kita mulai berbagi cerita, mengenal kebiasaan masing-masing, dan menemukan kenyamanan satu sama lain.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+
+                <div class="timeline-content">
+                    <span>OUR JOURNEY</span>
+                    <h3>Little Things Together</h3>
+
+                    <p>
+                        Ada banyak hal kecil yang mungkin terlihat sederhana bagi orang lain, tetapi punya arti tersendiri bagi kita. Percakapan panjang, candaan yang tidak jelas, cerita tentang hari yang melelahkan, sampai momen ketika kita hanya ingin saling menemani. Hal-hal kecil itulah yang perlahan menjadi kenangan berharga.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+
+                <div class="timeline-content">
+                    <span>THROUGH EVERRY MOMENT</span>
+                    <h3>Growing Together</h3>
+
+                    <p>
+                        Tentu perjalanan kita tidak selalu berjalan sempurna. Ada perbedaan pendapat, kesalahpahaman, dan hari-hari ketika semuanya terasa sedikit lebih sulit. Namun, aku percaya bahwa hubungan bukan tentang siapa yang selalu benar, melainkan tentang bagaimana kita mau belajar memahami, memperbaiki, dan tumbuh bersama.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+
+                <div class="timeline-content">
+                    <span>THE PRESENT</span>
+                    <h3>Still Choosing You</h3>
+
+                    <p>
+                        Hari ini, aku masih bersyukur karena bisa mengenal seseorang sepertimu, Novita. Terima kasih sudah menjadi bagian dari hari-hariku, menghadirkan cerita, tawa, dan warna dalam kehidupan yang terkadang terasa biasa saja. Aku mungkin belum menjadi seseorang yang sempurna, tetapi aku ingin terus belajar menjadi lebih baik.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+
+                <div class="timeline-content">
+                    <span>OUR TOMORROW</span>
+                    <h3>A Story Yet to Be Written</h3>
+
+                    <p>
+                        Aku tidak tahu akan seperti apa hari-hari yang akan datang. Akan ada banyak cerita baru, tempat baru, pengalaman baru, dan mungkin tantangan yang belum pernah kita hadapi. Namun, satu hal yang ingin aku jaga adalah keinginan untuk terus berjalan bersama, saling mendukung, dan menciptakan lebih banyak kenangan indah. Semoga cerita kita masih punya banyak halaman untuk ditulis.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="primary-btn" onclick="showScreen('letterScreen')">
+            Read My Letter ♡
+        </button>
+    </div>
+</section>
+
+<!-- LOVE LETTER -->
+<section class="screen" id="letterScreen">
+    <div class="letter-card">
+
+        <div class="letter-flower">❀</div>
+
+        <span class="small-label">A LETTER JUST FOR YOU</span>
+
+        <h1>Dear <i>Novita,</i></h1>
+
+        <div class="letter-body">
+
+            <p>Selamat ulang tahun, sayangku.</p>
+
+            <p>
+                Terima kasih sudah hadir dan menjadi bagian
+                dari hari-hariku. Aku bersyukur bisa mengenalmu,
+                berbagi cerita, tertawa bersama, dan melewati
+                banyak hal denganmu.
+            </p>
+
+            <p>
+                Di hari spesialmu ini, aku berharap semua hal
+                baik selalu datang menghampirimu. Semoga kamu
+                selalu diberikan kesehatan, kebahagiaan,
+                kemudahan dalam setiap langkah, dan tercapai
+                semua hal yang kamu impikan.
+            </p>
+
+            <p>
+                Jangan pernah merasa sendirian dalam menghadapi
+                dunia. Aku mungkin tidak selalu sempurna,
+                tetapi aku ingin terus belajar menjadi seseorang
+                yang bisa menemanimu.
+            </p>
+
+            <p>
+                Sekali lagi, happy birthday, sayangku.
+                Teruslah menjadi dirimu yang luar biasa.
+            </p>
+
+        </div>
+
+        <div class="letter-sign">
+            With love,<br>
+            <strong>Ibrahim ♡</strong>
+        </div>
+
+        <button class="primary-btn" onclick="showScreen('finalScreen')">
+            One Last Surprise →
+        </button>
+
+    </div>
+</section>
+
+<!-- FINAL SURPRISE -->
+<section class="screen" id="finalScreen">
+    <div class="main-card final-card">
+
+        <div class="top-decoration">✿ ♥ ✿</div>
+
+        <span class="small-label">THE END OF THIS LITTLE SURPRISE</span>
+
+        <div class="final-heart">♡</div>
+
+        <h1>You're My<br><i>Favorite Story.</i></h1>
+
+        <p>
+            Selamat ulang tahun, Eka Fitri Novita Sari.
+            Terima kasih sudah menjadi bagian dari cerita
+            yang ingin terus aku tulis.
+        </p>
+
+        <h2>Happy Birthday, My Love! ♡</h2>
+
+        <div class="signature">Forever yours, Ibrahim.</div>
+
+        <button class="primary-btn" onclick="showScreen('welcome')">
+            Back to Beginning ↺
+        </button>
+
+    </div>
+</section>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
+

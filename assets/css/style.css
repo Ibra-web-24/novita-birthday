@@ -1,0 +1,497 @@
+
+:root {
+    --cream: #f5eddf;
+    --paper: #fffaf0;
+    --brown: #72543e;
+    --dark: #493628;
+    --muted: #a28a71;
+    --accent: #b77c70;
+    --border: #e4d4bf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.paper-texture {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    opacity: .15;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E");
+}
+
+.screen {
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 18px;
+    animation: fadeIn .6s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    line-height: 1.2;
+    color: var(--dark);
+    margin: 20px 0;
+}
+
+h1 i {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+p {
+    color: var(--muted);
+    font-size: .95rem;
+    line-height: 1.9;
+}
+
+.main-card,
+.content-card,
+.letter-card {
+    width: 100%;
+    max-width: 650px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 50px rgba(89, 65, 43, .09);
+    position: relative;
+    text-align: center;
+}
+
+.main-card {
+    padding: 65px 35px;
+    border-radius: 4px;
+}
+
+.main-card::before,
+.content-card::before,
+.letter-card::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(183, 124, 112, .28);
+    pointer-events: none;
+}
+
+.top-decoration {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-bottom: 22px;
+    letter-spacing: 10px;
+}
+
+.small-label {
+    font-size: .65rem;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.stamp {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    padding: 8px 14px;
+    color: var(--accent);
+    font-size: .7rem;
+    letter-spacing: 2px;
+    transform: rotate(-5deg);
+    margin: 30px 0;
+}
+
+.bottom-note {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: .8rem;
+    margin-top: 30px;
+}
+
+.primary-btn {
+    position: relative;
+    z-index: 6;
+    border: none;
+    background: var(--brown);
+    color: #fffaf0;
+    padding: 15px 27px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .85rem;
+    letter-spacing: .5px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(183, 124, 112, .2);
+}
+
+.input-wrapper {
+    margin-top: 30px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    max-width: 390px;
+    padding: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    outline: none;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.input-wrapper input:focus {
+    border-color: var(--accent);
+}
+
+.input-wrapper input::placeholder {
+    color: #c2ad98;
+}
+
+.error-message {
+    color: #b45f55;
+    font-size: .8rem;
+    margin-top: 18px;
+    min-height: 20px;
+}
+
+.heart-decoration {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-top: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+.cake {
+    font-size: 5rem;
+    margin: 25px 0;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.divider-flower {
+    margin-top: 25px;
+    color: var(--accent);
+    font-size: .85rem;
+}
+
+/* OUR MEMORIES */
+
+.content-card {
+    max-width: 850px;
+    padding: 55px 35px;
+    border-radius: 4px;
+}
+
+.section-description {
+    max-width: 500px;
+    margin: 0 auto 35px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.photo-item {
+    background: #fff;
+    padding: 12px 12px 30px;
+    box-shadow: 0 6px 20px rgba(75, 55, 37, .12);
+    transition: .3s;
+}
+
+.photo-item:hover {
+    transform: rotate(0) translateY(-8px) !important;
+}
+
+.photo-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    background: #e8ddce;
+}
+
+.photo-item span {
+    display: block;
+    margin-top: 12px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--brown);
+    font-size: .9rem;
+}
+
+.rotate-left {
+    transform: rotate(-4deg);
+}
+
+.rotate-right {
+    transform: rotate(4deg);
+}
+
+/* OUR STORY */
+
+.timeline {
+    max-width: 570px;
+    margin: 45px auto;
+    text-align: left;
+    border-left: 1px solid var(--border);
+    padding-left: 28px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 38px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -39px;
+    top: 0;
+    background: var(--paper);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    font-size: .7rem;
+}
+
+.timeline-content span {
+    color: var(--accent);
+    font-size: .65rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin: 9px 0;
+    color: var(--dark);
+}
+
+.timeline-content p {
+    font-size: .85rem;
+}
+
+/* LOVE LETTER */
+
+.letter-card {
+    max-width: 680px;
+    padding: 60px 45px;
+    text-align: left;
+    background: #fff9ed;
+}
+
+.letter-flower {
+    text-align: center;
+    color: var(--accent);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.letter-card h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.letter-body {
+    margin-top: 25px;
+}
+
+.letter-body p {
+    color: #78604c;
+    margin-bottom: 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: .98rem;
+}
+
+.letter-sign {
+    margin-top: 30px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--brown);
+}
+
+.letter-card .primary-btn {
+    display: block;
+    margin: 35px auto 0;
+}
+
+/* FINAL */
+
+.final-heart {
+    font-size: 5rem;
+    color: var(--accent);
+    margin: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.final-card h2 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 30px;
+}
+
+.signature {
+    margin-top: 15px;
+    color: var(--muted);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+/* MUSIC */
+
+.music-btn {
+    position: fixed;
+    z-index: 10;
+    top: 20px;
+    right: 20px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    color: var(--brown);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.music-btn.playing {
+    animation: heartbeat 1.5s infinite;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 22px 14px;
+    }
+
+    .main-card {
+        padding: 55px 22px;
+    }
+
+    .content-card {
+        padding: 45px 20px;
+    }
+
+    .letter-card {
+        padding: 48px 25px;
+    }
+
+    .photo-grid {
+        gap: 20px;
+    }
+
+    .photo-item {
+        padding: 8px 8px 22px;
+    }
+
+    .photo-item span {
+        font-size: .72rem;
+    }
+
+    .small-label {
+        font-size: .58rem;
+        letter-spacing: 2px;
+    }
+
+    .primary-btn {
+        max-width: 100%;
+        font-size: .78rem;
+        padding: 14px 18px;
+    }
+}
+/* BIRTHDAY DATE */
+
+.birthday-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.date-line {
+    width: 35px;
+    height: 1px;
+    background: #c98775;
+}
+
+.date-icon {
+    color: #bd806e;
+    font-size: 14px;
+}
+
+.date-text {
+    color: #bd806e;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
